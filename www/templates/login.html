@@ -1,0 +1,41 @@
+<!--creating a simple login form without validation
+<div class ="list">
+   <label class="item item-input">
+      <span class="input-label">Email</span>
+      <input type="email" ng-model="email">
+   </label>
+   <label class="item item-input">
+      <span class="input-label">Password</span>
+      <input type="password" ng-model="password" ng-minlength="3">
+   </label>
+   <div class="padding">
+      <button  ui-sref="app" ng-disabled="!email || !password" class="button button-block button-positive">Sign In
+      </button>
+   </div>
+</div>
+-->
+<!--creating a simple login form with validation and using $state inside controller to navigate instead ui-sref="app"-->
+<div class ="list">
+   <label class="item item-input">
+      <span class="input-label">Email</span>
+      <input type="email" ng-model="email">
+   </label>
+   <label class="item item-input">
+      <span class="input-label">Password</span>
+      <input type="password" ng-model="password" ng-minlength="3">
+   </label>
+   <div class="padding">
+      <button  ng-click="validate()" ng-disabled="!email || !password" class="button button-block button-balanced">Sign In
+      </button>
+   </div>
+   <!--Sign up button-->
+   <div class="padding">
+     <button ui-sref="register" class="button button-block button-calm">Sign Up
+    </div>
+
+    
+
+
+    <p ng-if="message">Message: <strong>{{ message }}</strong></p>
+   <p ng-if="error">Error: <strong>{{ error }}</strong></p>
+</div>
